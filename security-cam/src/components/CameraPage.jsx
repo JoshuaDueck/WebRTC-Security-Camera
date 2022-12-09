@@ -33,9 +33,10 @@ const CameraPage = () => {
         }
     }, [pc]);
 
+    // Subscribe to the document for the client key, and wait for the startOffer field to be set.
     useEffect(() => {
         if (clientKey) {
-            unsubscribeRef.current && unsubscribeRef.current();
+            unsubscribeRef.current && unsubscribeRef.current(); // Unsubscribe from the previous document, if the key changes.
             unsubscribeRef.current = onSnapshot(doc(firestore, 'clients', clientKey), (snapshot) => {
                 if (snapshot.data() && snapshot.data().startOffer) {
                     handleIncomingSubmit();
