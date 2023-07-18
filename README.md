@@ -1,4 +1,4 @@
-# COMP-4300-Final-Project
+# COMP 4300 Final Project
 WebRTC Security Camera
 
 - The security-cam directory contains the React project for the camera itself.
